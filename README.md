@@ -3,7 +3,7 @@ Bash script that displays the number of packets received by [Dire Wolf](https://
 
 Output of script:
 
-![output of bash script](https://github.com/caseyjamesdavis/direwolf-rx-counts/blob/master/direwolf_rx_counts_bash_only.png)
+![output of bash script](https://github.com/caseyjamesdavis/direwolf-rx-counts/blob/master/direwolf_rx_counts_bash_only_rx_source.png)
 
 This script requires:
 * [head](https://en.wikipedia.org/wiki/Head_(Unix))
