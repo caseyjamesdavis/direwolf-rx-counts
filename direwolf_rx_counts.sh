@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# crude bash script to count the numbers of packets rx'd by direwolf
+# crude bash script to count the number of packets rx'd by direwolf
 # assumes direwolf is using the daily log file option, i.e., lowercase l (-l)
 
 while :
@@ -25,16 +25,24 @@ do
 	for i in ${!dt[@]};
 	do
 
-	  t_setting=${dt[$i]}
-	  description=${label[$i]}
+		t_setting=${dt[$i]}
+		description=${label[$i]}
 
-	  echo $description
+		echo $description
 
-	  awk -F',' -vDate=`date -d "$t_setting" +'%Y-%m-%dT%H:%M:%SZ'` '/chan/ {next} $3 > Date {print $0}' $full_path | wc -l
+		awk -F',' -vDate=`date -d "$t_setting" +'%Y-%m-%dT%H:%M:%SZ'` '/chan/ {next} $3 > Date {print $0}' $full_path | wc -l
 
-	  echo ""
+		echo ""
 
 	done
+
+
+	echo ""
+        echo "Rx Sources in the Last 3 Hrs:"
+	echo ""
+	
+	awk -F',' -vDate=`date -d 'now-3 hour' +'%Y-%m-%dT%H:%M:%SZ'` '/chan/ {next} $3 > Date {print $5}' $full_path | sort | uniq -c | sort -r
+
 
 	sleep 10s
 
