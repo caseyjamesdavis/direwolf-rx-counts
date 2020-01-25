@@ -5,7 +5,11 @@ Output of script:
 
 ![output](screenshot.png)
 
-This script requires:
-* [head](https://en.wikipedia.org/wiki/Head_(Unix))
-* [awk](https://en.wikipedia.org/wiki/AWK)
-* [wc](https://en.wikipedia.org/wiki/Wc_(Unix))
+This script uses the following commands in Bash 5.0.11(1):
+* ls
+* head
+* tail
+* awk
+* sort
+* uniq
+* wc
