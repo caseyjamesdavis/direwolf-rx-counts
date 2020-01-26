@@ -5,7 +5,7 @@ Output of script:
 
 ![output](screenshot.png)
 
-This script uses the following commands in Bash 5.0.11(1):
+This script uses the following commands in Bash 5.0.11:
 * ls
 * head
 * tail
@@ -13,3 +13,4 @@ This script uses the following commands in Bash 5.0.11(1):
 * sort
 * uniq
 * wc
+* printf
