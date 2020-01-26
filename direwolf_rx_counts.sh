@@ -13,8 +13,8 @@ do
 	direwolf_log_dir="$HOME/direwolf_rx_log"
 
 	# finds two most recent log files
-	second_newest_file=$(ls $direwolf_log_dir -Art | tail -n 2 | head -n 1)
-	first_newest_file=$(ls $direwolf_log_dir -Art | tail -n 2 | tail -n 1)
+	second_newest_file=$(ls $direwolf_log_dir | sort -m | tail -n 2 | head -n 1)
+	first_newest_file=$(ls $direwolf_log_dir | sort -m | tail -n 2 | tail -n 1)
 
 	echo "Data Sources:"
 	echo $second_newest_file
