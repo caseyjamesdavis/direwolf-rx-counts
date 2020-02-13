@@ -27,7 +27,12 @@ do
 #	label=("Last 24 Hrs:" "Last 3 Hrs:" "Last 1 Hr:" "Last 10 Min:" "Last Min:")
 
 	dt=("now-24 hour" "now-1000 minute" "now-100 minute" "now-10 minute" "now-1 minute")
-	label=("Last 24 Hrs:" "Last 1000 Min:" "Last 100 Min:" "Last 10 Min:" "Last Min:")
+	label=("24 Hrs:" "1000 Min:" "100 Min:" "10 Min:" "1 Min:")
+
+
+	printf "%-25s\n\n" "Rx packet counts in the last:"	
+
+
 
 	# loop to run awk command for each time defined above and for both log files
 	for i in ${!dt[@]};
@@ -35,7 +40,7 @@ do
 
 		count=$(awk -F',' -vDate=`date -d "${dt[$i]}" +'%Y-%m-%dT%H:%M:%SZ'` '/chan/ {next} $3 > Date {print $0}' $two_files | wc -l)
 
-		printf "%-15s %-5i\n\n" "${label[$i]}" $count
+		printf "%12s %-6i\n\n" "${label[$i]}" $count
 
 	done
 
