@@ -15,5 +15,5 @@ This script uses the following commands in Bash 5.0.11:
 * wc
 * printf
 
-Also need to install:
+And the following bash script:
 * [spark](https://github.com/holman/spark)
