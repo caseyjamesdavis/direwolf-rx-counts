@@ -14,3 +14,6 @@ This script uses the following commands in Bash 5.0.11:
 * uniq
 * wc
 * printf
+
+Also need to install:
+* [spark](https://github.com/holman/spark)
