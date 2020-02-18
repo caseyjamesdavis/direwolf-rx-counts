@@ -54,7 +54,10 @@ do
 
 	printf "%-25s\n\n" "Rx sources in the last 100 minutes:"
 
-	printf "%s\n\n" "$rx_sources"
+	printf "%s\n\n\n" "$rx_sources"
+
+
+
 
 
 
@@ -62,6 +65,11 @@ do
 #	awk -F ',' '/W1UWS-1/ {print $0}' $two_files
 
 
+	printf "%-25s\n\n" "Daily Rx Packet Count History:"
+
+	wc -l direwolf_rx_log/* | grep -v total | awk '{print $1}' | spark
+
+	printf "\n\n"
 
 	# pause infinite loop
 	sleep 10s
