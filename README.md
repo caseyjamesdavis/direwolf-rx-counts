@@ -14,6 +14,8 @@ This script uses the following commands in Bash 5.0.11:
 * uniq
 * wc
 * printf
+* seq
+* bc
 
 And the following bash script:
 * [spark](https://github.com/holman/spark)
