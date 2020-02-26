@@ -54,7 +54,7 @@ do
 
 
 	# attempting to add markers under bar graph
-	seq -s '......' 1 8
+	seq -s '......' 0 8
 
 	printf "\n\n"
 
