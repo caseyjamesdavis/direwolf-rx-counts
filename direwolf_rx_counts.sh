@@ -2,7 +2,7 @@
 
 # crude bash script to count the number of packets rx'd by direwolf
 # assumes direwolf is using the daily log file option, i.e., lowercase l (-l)
-# Casey J. Davis 2020.02.25
+# Casey J. Davis 2020.02.26
 
 # forever loop
 while :
@@ -48,34 +48,21 @@ do
 	printf "%s\n\n\n" "$rx_sources"
 
 
-
 	# show bar graph history of rx packet counts for all files in log directory
-	printf "%-25s\n\n" "Daily Rx Packet Count History:"
-	wc -l $direwolf_log_dir/* | grep -v total | awk '{print $1}' | spark
-	printf "\n\n"
-
+	printf "%-25s\n\n" "Daily Total Rx Packet Count for Last Two Months:"
+	wc -l $direwolf_log_dir/* | grep -v total | tail -n 56 | awk '{print $1}' | spark
 
 
 	# attempting to add markers under bar graph
-#	n=wc -l $direwolf_log_dir/*
+	seq -s '......' 1 8
 
-#	no_wk=$(echo "$n/7" | bc)
-#	no_day=$(echo "$n-($no_wk*7)-1" | bc)
-
-#	printf ' %.0s' $(seq $no_day)
-#	printf '*%.0s'
-#	printf '      *%.0s' $(seq $no_wk)
-
-
-
-
-
+	printf "\n\n"
 
 
 
 
 	# pause infinite loop
-	sleep 60s
+	sleep 15s
 
 done
 
